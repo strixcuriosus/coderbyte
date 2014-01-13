@@ -1,9 +1,5 @@
 function firstReverse(input) { 
-  var str = '';
-  for (var i = input.length - 1; i >=0; i--){
-    str += input.charAt(i);
-  };
-  return str;
+  return input.split("").reverse().join("");
 }
    
 //takes input parameter and returns a reversed string

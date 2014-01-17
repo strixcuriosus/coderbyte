@@ -1,22 +1,25 @@
 /* Using the JavaScript language, have the function LetterCountI(str) take the str parameter being passed and return the first word with the greatest number of repeated letters. For example: "Today, is the greatest day ever!" should return greatest because it has 2 e's (and 2 t's) and it comes before ever which also has 2 e's. If there are no words with repeating letters return -1. Words will be separated by spaces. */
 
 function LetterCountI(str) {
+
     function countletters(word){
         var foundLetters = {},
-            currentletter;
+            currentLetter,
+            ans = 0;
         for (var i = 0, len = word.length; i < len; i++){
-            // use charAt to get a letter
-            if (word.charAt(i) in foundLetters)
-                ;
+            currentLetter = word.charAt(i);
+            if (currentLetter in foundLetters)
+                foundLetters[currentLetter] += 1;
             else 
-                foundLetters[charAt(i)] = 0;
-
-            //is it in my letter-collecting obj ? add 1 to count : add letter to letter-collecting obj with count 0
-
+                foundLetters[currentLetter] = 0;
         }
-        //iterate over dict and sum values
-        //return sum
+        for (letter in foundLetters){
+            ans += foundLetters[letter];
+        }
+        return ans;
     }
+
+
 
 //make an array of words
 //map to a new array with countletters fn

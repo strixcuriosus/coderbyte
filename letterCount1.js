@@ -16,17 +16,25 @@ function LetterCountI(str) {
         for (letter in foundLetters){
             ans += foundLetters[letter];
         }
-        return ans;
+        return (ans == 0 ? -1 : ans);
     }
 
-
-
-//make an array of words
+var words = str.split(" ");
 //map to a new array with countletters fn
+var wordcounts = words.map(countletters);
 //find the index of the max of that array
-//if the max is 0, return -1
+var result = -1;
+for (var i = 0, len = wordcounts.length; i < len; i++){
+    if (wordcounts[i] > result) {
+        var ind = i;
+        result = wordcounts[i];
+    }
+}
 //return the word at that index in the words array
-
+if (result < 0 )
+    return -1;
+else
+    return words[ind];
 
 
 }

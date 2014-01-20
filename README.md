@@ -1,1 +1,1 @@
-these are my solutions to coderbyte puzzles.
+These are my solutions to coderbyte puzzles.

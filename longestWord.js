@@ -1,13 +1,14 @@
-function longestWord(string) { 
-    var wordlist = string.replace(/[\W0-9]/g,' ').split(" ");
-    var wordlen = 0;
-    var ans = '';
-    for (var i = 0; i < wordlist.length; i++){
-        if (wordlist[i].length > wordlen){
-            wordlen = wordlist[i].length;
-            ans = wordlist[i];
-        }
+function longestWord(sen) { 
+  var list = sen.split(/[^A-Za-z]/);
+  var len = 0;
+  var word;
+  for(var i = 0; i < list.length; i++){
+    if (list[i].length > len) {
+      word = list[i];
+      len = list[i].length;
     }
-    return ans;
-            
+  }
+  return word; 
+         
 }
+   
